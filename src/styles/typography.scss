@@ -1,4 +1,5 @@
-@import "./utils/mixins.scss";
+// @import "./utils/mixins.scss";
+@import "./colors.scss";
 
 %h1 {
 	font-family: 'Nunito', sans-serif;
@@ -9,7 +10,7 @@
 
   margin: 0;
 
-	color: rgba(0, 0, 0, 0.87);
+	color: $fontDark;
 
   // @include onTablet() {
   //   font-size: 48px;
