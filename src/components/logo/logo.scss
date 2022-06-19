@@ -1,9 +1,7 @@
+@import "../../styles/utils/mixins.scss";
+
 .logo {
   &__image {
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
+    @include hover(transform, scale(1.05));
   }
 }

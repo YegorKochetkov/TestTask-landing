@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Logo } from './components/logo';
+import { Header } from "./components/Header";
 import { useGetUsersQuery } from "./store";
 import { selectCurrentUsers } from './store/currentUsersSlice';
 import { useAppSelector } from './store/hooks';
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Logo />
+      <Header />
       <ul>
         {data?.users.map((user) => (
           <li key={user.id}>

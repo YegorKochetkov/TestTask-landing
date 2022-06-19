@@ -18,8 +18,9 @@
   }
 }
 
-@mixin onDesktopHighDef() {
-  @media (min-width: 1170px) {
+@mixin onDesktopHigh() {
+  @media (min-width: 2560px) {
     @content;
   }
 }
+
