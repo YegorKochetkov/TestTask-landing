@@ -3,15 +3,16 @@
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
 
-.main {	
+.info {	
 	@extend %max-width-wrapper;
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 
 	min-height: 500px;
 	padding-top: 40px;
+	margin-bottom: $margin-between-section;
 
   @extend %main-text;
 

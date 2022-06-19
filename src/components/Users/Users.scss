@@ -1,0 +1,95 @@
+@use "../../styles/blocks/buttons.scss";
+@import "../../styles/utils/extends.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.cards {	
+	@extend %max-width-wrapper;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	padding: $padding-content-mobile;
+	margin-bottom: $margin-between-section;
+
+  @extend %main-text;
+
+	@include onTablet() {
+		padding: $padding-content-tablet;
+	}
+
+	@include onDesktop() {
+		padding: $padding-content-desktop;
+	}
+
+	@include onDesktopHigh() {
+		padding: $padding-content-desktopHigh;
+	}	
+
+	&__title {
+		@extend %h1;
+		margin-bottom: 50px;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 20px;
+	
+		@include onTablet() {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 16px;
+		}
+	
+		@include onDesktop() {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 29px;
+		}
+	
+		list-style: none;
+		margin: 0;
+		margin-bottom: 50px;
+		padding: 0;
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	width: 328px;
+	height: 254px;
+	padding: 20px;
+	
+		@include onTablet() {
+			width: 344px;
+		}
+	
+		@include onDesktop() {
+			width: 282px;
+		}
+	
+		@include onDesktopHigh() {
+			width: 370px;
+		}
+	
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+	&__avatar {
+		width: 70px;
+		height: 70px;
+
+		border-radius: 50%;
+	}
+
+	&__info,
+	&__name {
+		margin: 0;
+		padding: 0;
+	}
+}
