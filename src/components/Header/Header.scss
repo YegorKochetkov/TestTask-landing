@@ -1,5 +1,6 @@
 @use "../../styles/blocks/buttons.scss";
 @import "../../styles/utils/extends.scss";
+@import "../../styles/variables.scss";
  
 .header {
 	@extend %max-width-wrapper;
@@ -9,19 +10,19 @@
 	align-items: center;
 	gap: 14px;
 
-	padding: 13px 16px;
+	padding: $padding-content-mobile;
 
 	@include onTablet() {
-		padding: 13px 32px;
+		padding: $padding-content-tablet;
 	}
 
 	@include onDesktop() {
-		padding: 13px 60px;
+		padding: $padding-content-desktop;
 	}
 
 	@include onDesktopHigh() {
-		padding: 13px 0;
-	}
+		padding: $padding-content-desktopHigh;
+	}	
 }
 // .button {
 //   display: flex;

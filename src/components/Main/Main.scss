@@ -1,0 +1,68 @@
+@use "../../styles/blocks/buttons.scss";
+@import "../../styles/utils/extends.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.main {	
+	@extend %max-width-wrapper;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+
+	min-height: 500px;
+	padding-top: 40px;
+
+  @extend %main-text;
+
+	background-image: url(../../images/background_mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+	@include onTablet {
+		justify-content: center;
+		padding-top: 0;
+		background-image: url(../../images/background_tablet.jpg);
+	}
+
+	@include onDesktop {
+		background-image: url(../../images/background_desktop.jpg);
+		min-height: 650px;
+	}
+
+	@include onDesktopHigh{
+		background-image: url(../../images/background_desktop_high.jpg);
+	}
+
+
+	&__article {
+		color: $fontLight;
+		
+		max-width: 380px;
+		padding: $padding-content-mobile;
+		margin: 0 auto 32px;
+
+		@include onTablet() {
+			padding: $padding-content-tablet;
+		}
+	
+		@include onDesktop() {
+			padding: $padding-content-desktop;
+		}
+	
+		@include onDesktopHigh() {
+			padding: $padding-content-desktopHigh;
+		}	
+	}
+
+	&__title {
+		@extend %h1;
+		color: $fontLight;
+		margin-bottom: 21px;
+	}
+
+	&__paragraph {
+		margin: 0;
+	}
+}
