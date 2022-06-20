@@ -54,18 +54,48 @@ export const UsersList: FC = () => {
 							alt={`${user.name} photo`}
 							className="card__avatar"
 						/>
-						<p className="card__name">
-							{user.name}
+
+						<p className="tooltip">
+							<span className="card__name">
+								{user.name}
+							</span>
+
+
+							<span className="tooltiptext">
+								{user.name}
+							</span>
 						</p>
-						<p className="card__position">
-							{user.position}
+
+						<p className="tooltip">
+							<span className="card__position">
+								{user.position}
+							</span>
+
+
+							<span className="tooltiptext">
+								{user.position}
+							</span>
 						</p>
-						<a className="card__email" href={`mailto: ${user.email}`}>
-							{user.email}
+
+						<p className="tooltip">
+							<a className="card__email" href={`mailto: ${user.email}`}>
+								{user.email}
 							</a>
-						<a className="card__phone" href={`tel:${user.phone}`}>
-							{user.phone}
-						</a>						
+
+							<span className="tooltiptext">
+								{user.email}
+							</span>
+						</p>
+						
+						<p className="tooltip">
+							<a className="card__phone" href={`tel:${user.phone}`}>
+								{user.phone}
+							</a>		
+
+							<span className="tooltiptext">
+								{user.phone}
+							</span>
+						</p>
           </li>
         ))}
 			</ul>
