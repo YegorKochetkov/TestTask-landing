@@ -5,6 +5,7 @@
 
 .cards {	
 	@extend %max-width-wrapper;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -37,6 +38,11 @@
 		grid-template-columns: 1fr;
 		row-gap: 20px;
 	
+		list-style: none;
+		margin: 0;
+		margin-bottom: 50px;
+		padding: 0;
+
 		@include onTablet() {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 16px;
@@ -46,19 +52,15 @@
 			grid-template-columns: repeat(3, 1fr);
 			gap: 29px;
 		}
-	
-		list-style: none;
-		margin: 0;
-		margin-bottom: 50px;
-		padding: 0;
+	}
+
+	&__loader {
+		position: absolute;
+		top: 45%;
 	}
 }
 
 .card {
-	// display: flex;
-	// flex-direction: column;
-	// align-items: center;
-	// gap: 20px;
 	display: block;
 
 	width: 328px;
@@ -78,6 +80,9 @@
 		}
 
 	&__avatar {
+		display: block;
+		margin: 0 auto;
+
 		width: 70px;
 		height: 70px;
 		margin-bottom: 20px;
@@ -90,9 +95,14 @@
 	&__position,
 	&__email,
 	&__phone {
+		display: block;
+
 		margin: 0;
 		margin-bottom: 20px;
 		padding: 0;
+
+		color: $fontDark;
+		text-decoration: none;
 
 		white-space: nowrap;
 		overflow: hidden;

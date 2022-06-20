@@ -2,6 +2,7 @@
 @import "../../styles/utils/extends.scss";
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
 
 .info {	
 	@extend %max-width-wrapper;
@@ -12,6 +13,7 @@
 
 	min-height: 500px;
 	padding-top: 40px;
+	margin: 0 auto;
 	margin-bottom: $margin-between-section;
 
   @extend %main-text;

@@ -4,7 +4,7 @@ import "./Main.scss";
 
 export const Main: FC = () => {
 	return (
-		<main>
+		<main className="main">
 			<section className="info">
 				<article className="info__article">
 					<h1 className="info__title">

@@ -11,12 +11,15 @@ import { Loader } from "../Loader";
 
 export const UsersList: FC = () => {
 	const [isLastUsers, setIsLastUsers] = useState(true);
-
+	const [isLoading, setIsLoading] = useState(true);
+	
 	const dispatch = useAppDispatch();
 	const currentUsers: Users = useAppSelector(selectCurrentUsers);
-  const { data, isLoading } = useGetUsersQuery(currentUsers);
+  const { data } = useGetUsersQuery(currentUsers);
 
 	const handleShowMore = () => {
+		setIsLoading(true);
+		
 		if (data && data?.links.next_url !== null) {
 			dispatch(setCurrentUsers(data));
 		}
@@ -25,6 +28,7 @@ export const UsersList: FC = () => {
 	useEffect(() => {
 		if (data) {
 			setIsLastUsers(false);
+			setIsLoading(false);
 		}
 
 		if (data?.links.next_url === null) {
@@ -38,15 +42,16 @@ export const UsersList: FC = () => {
 				Working with GET request
 			</h1>
 
-			{isLoading && <Loader />}
+			<div className="cards__loader">
+				{isLoading && <Loader />}
+			</div>
 
 			<ul className="cards__list">
 				{data?.users.map((user) => (
           <li key={user.id} className="card">
             <img
 							src={user.photo}
-							alt="user
-							avatar"
+							alt={`${user.name} photo`}
 							className="card__avatar"
 						/>
 						<p className="card__name">
@@ -55,12 +60,12 @@ export const UsersList: FC = () => {
 						<p className="card__position">
 							{user.position}
 						</p>
-						<p className="card__email">
+						<a className="card__email" href={`mailto: ${user.email}`}>
 							{user.email}
-						</p>
-						<p className="card__phone">
+							</a>
+						<a className="card__phone" href={`tel:${user.phone}`}>
 							{user.phone}
-						</p>
+						</a>						
           </li>
         ))}
 			</ul>
