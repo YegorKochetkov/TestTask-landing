@@ -7,10 +7,16 @@ export const usersApi = createApi({
 	tagTypes: ["Users"],
 	endpoints: (builder) => ({
 		getUsers: builder.query<Users, Users>({
-			query: (users) => (`users?page=${users.page}&count=${users.count}`),
+			query: (users) => {
+				if (users.links.next_url) {
+					return (users.links.next_url);
+				}
+
+				return (`users?page=${users.page}&count=${users.count}`)
+			},
 			providesTags: [{type: "Users", id: "List"}],
 		})
 	}),
 });
 
-export const { useGetUsersQuery } = usersApi;
+export const { useGetUsersQuery, useLazyGetUsersQuery } = usersApi;

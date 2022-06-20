@@ -26,4 +26,10 @@
   &:hover {
     cursor: pointer;
   }
+
+  &:disabled {
+    color: $fontLight;
+    background-color: $disabled;
+    cursor: inherit;
+  }
 }

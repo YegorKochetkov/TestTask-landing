@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Users } from "../Users";
+import { UsersList } from "../UsersList";
 import "./Main.scss";
 
 export const Main: FC = () => {
@@ -25,7 +25,7 @@ export const Main: FC = () => {
 					Sign up
 				</a>
 			</section>
-			<Users />
+			<UsersList />
 		</main>
 	);
 };

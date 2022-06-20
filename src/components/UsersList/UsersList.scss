@@ -55,10 +55,11 @@
 }
 
 .card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 20px;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+	// gap: 20px;
+	display: block;
 
 	width: 328px;
 	height: 254px;
@@ -75,21 +76,26 @@
 		@include onDesktopHigh() {
 			width: 370px;
 		}
-	
-	white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 
 	&__avatar {
 		width: 70px;
 		height: 70px;
+		margin-bottom: 20px;
 
 		border-radius: 50%;
 	}
 
 	&__info,
-	&__name {
+	&__name,
+	&__position,
+	&__email,
+	&__phone {
 		margin: 0;
+		margin-bottom: 20px;
 		padding: 0;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
