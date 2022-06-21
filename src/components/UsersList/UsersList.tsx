@@ -63,7 +63,7 @@ export const UsersList: FC = () => {
 				{isLoading && <Loader />}
 			</div>
 
-			<ul className="cards__list">
+			<ul className="cards__list" id="users">
 				{data?.users.map((user) => (
           <li key={user.id} className="card">
 						<img

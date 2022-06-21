@@ -1,5 +1,4 @@
-
-export type User = {
+export interface User {
 	"id": string,
 	"name": string,
 	"email": string,
@@ -8,4 +7,4 @@ export type User = {
 	"position_id": string,
 	"registration_timestamp": string,
 	"photo": string,
-};
+}
