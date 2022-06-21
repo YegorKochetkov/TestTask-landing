@@ -5,9 +5,26 @@ import {
 	selectCurrentUsers,
 	setCurrentUsers,
 	Users,
-} from '../../store/currentUsersSlice';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+} from "../../store/currentUsersSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Loader } from "../Loader";
+import { styled } from "@mui/material/styles";
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+
+const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+		fontSize: "16px",
+		lineHeight: "26px",
+    color: "#ffffffde",
+    backgroundColor: "#000000de",
+		padding: "3px 16px;",
+		marginLeft: "10%",
+		width: "fit-content",
+		textAlign: "center",
+  },
+}));
 
 export const UsersList: FC = () => {
 	const [isLastUsers, setIsLastUsers] = useState(true);
@@ -38,9 +55,9 @@ export const UsersList: FC = () => {
 
 	return (
 		<section className="cards">
-			<h1 className="cards__title">
+			<h2 className="cards__title">
 				Working with GET request
-			</h1>
+			</h2>
 
 			<div className="cards__loader">
 				{isLoading && <Loader />}
@@ -49,53 +66,36 @@ export const UsersList: FC = () => {
 			<ul className="cards__list">
 				{data?.users.map((user) => (
           <li key={user.id} className="card">
-            <img
+						<img
 							src={user.photo}
 							alt={`${user.name} photo`}
 							className="card__avatar"
 						/>
+            
 
-						<p className="tooltip">
+						<CustomTooltip title={user.name}>
 							<span className="card__name">
 								{user.name}
 							</span>
+						</CustomTooltip>
 
-
-							<span className="tooltiptext">
-								{user.name}
-							</span>
-						</p>
-
-						<p className="tooltip">
+						<CustomTooltip title={user.position}>
 							<span className="card__position">
 								{user.position}
 							</span>
+						</CustomTooltip>
 
-
-							<span className="tooltiptext">
-								{user.position}
-							</span>
-						</p>
-
-						<p className="tooltip">
+						<CustomTooltip title={user.email}>
 							<a className="card__email" href={`mailto: ${user.email}`}>
 								{user.email}
 							</a>
-
-							<span className="tooltiptext">
-								{user.email}
-							</span>
-						</p>
+						</CustomTooltip>
 						
-						<p className="tooltip">
+						<CustomTooltip title={user.phone}>
 							<a className="card__phone" href={`tel:${user.phone}`}>
 								{user.phone}
 							</a>		
-
-							<span className="tooltiptext">
-								{user.phone}
-							</span>
-						</p>
+						</CustomTooltip>
           </li>
         ))}
 			</ul>
