@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Form } from "../Form";
+import { AddNewUserForm } from "../Form";
 import { UsersList } from "../UsersList";
 import "./Main.scss";
 
@@ -27,7 +27,7 @@ export const Main: FC = () => {
 				</a>
 			</section>
 			<UsersList />
-			<Form />
+			<AddNewUserForm />
 		</main>
 	);
 };
