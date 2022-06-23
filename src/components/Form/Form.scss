@@ -10,7 +10,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	gap: 50px;
+	gap: 30px;
 
 	padding: $padding-content-mobile;
 	margin-bottom: $margin-between-section;
@@ -31,23 +31,89 @@
 
 	&__title {
 		@extend %h1;
+		margin-bottom: 20px;
 	}
 
 	&__field {
 		position: relative;
+
 		text-align: left;
+
 		width: 100%;
-		max-width: 380px;
+		max-width: $form-field-max-width;
+
+		&--upload {
+			position: relative;
+			box-sizing: border-box;
+
+			padding-left: 84px;
+			margin-bottom: 20px;
+
+			border: 1px solid $formBorder;
+			border-radius: 4px;
+		}
+
+		&--error {
+			border-color: $error;
+		}
 	}
 
 	&__label {
 		display: block;
-		margin-bottom: 11px;
+		margin-bottom: 12px;
 	}
 
 	&__loader {
 		position: absolute;
 		left: 50%;
 		transform: translate(-50%);
+	}
+
+	&__upload-button {
+		position: absolute;
+		left: -1px;
+		top: -1px;
+
+		color: $fontDark;
+
+		border: 1px solid $fontDark;
+		border-radius: 4px 0 0 4px;
+
+		margin: 0;
+		padding: $padding-input-field;
+		
+		&:hover {
+			cursor: pointer;
+		}	
+		
+		&--error {
+			border-color: $error;
+		}
+	}
+
+	&__upload-text {
+		display: block;
+
+		margin: 0;
+		padding: $padding-input-field;
+
+		color: $placeholder;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		
+		&:hover {
+			cursor: pointer;
+		}	
+	}
+			
+	&__error-message {
+		position: absolute;
+		left: 16px;
+
+		color: $error;
+
+		margin: 0;
+		padding: 0;
 	}
 }
