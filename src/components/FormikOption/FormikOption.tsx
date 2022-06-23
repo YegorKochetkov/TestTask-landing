@@ -52,13 +52,13 @@ const theme = createTheme({
 export const FormikOption: React.FC<FormikOptionProps> = ({
   name,
 }) => {
-  const { data, isLoading } = useGetPositionsQuery();
+  const { data, isFetching } = useGetPositionsQuery();
   const positions = data?.positions;
 
   return (
     <>
       <div className="form__loader">
-        {isLoading && <Loader />}
+        {isFetching && <Loader />}
       </div>
       <Field
         name={name}
@@ -69,7 +69,7 @@ export const FormikOption: React.FC<FormikOptionProps> = ({
           {positions?.map((position) => (
               <FormControlLabel
                 control={<Radio />}
-                value={position.name}
+                value={position.id}
                 label={position.name}
                 labelPlacement="end"
                 key={position.id}
