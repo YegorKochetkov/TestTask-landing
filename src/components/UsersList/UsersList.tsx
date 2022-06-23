@@ -45,41 +45,46 @@ export const UsersList: FC = () => {
 			</div>
 
 			<ul className="cards__list" id="users">
-				{data?.users.map((user: User) => (
-          <li key={user.id} className="card">
-						<img
-							src={user.photo}
-							alt={`${user.name} photo`}
-							className="card__avatar"
-						/>
-            
+				{data?.users.map((user: User) => {
+					const phone = user.phone.slice(0, 3) +
+						"(" + user.phone.slice(3, 6) + ")" +
+						user.phone.slice(6);
 
-						<CustomTooltip title={user.name}>
-							<span className="card__name">
-								{user.name}
-							</span>
-						</CustomTooltip>
+					return (
+						<li key={user.id} className="card">
+							<img
+								src={user.photo}
+								alt={`${user.name} photo`}
+								className="card__avatar"
+							/>
+							
 
-						<div>
-							<CustomTooltip title={user.position}>
-								<span className="card__position">
-									{user.position}
+							<CustomTooltip title={user.name}>
+								<span className="card__name">
+									{user.name}
 								</span>
 							</CustomTooltip>
-							<CustomTooltip title={user.email}>
-								<a className="card__email" href={`mailto: ${user.email}`}>
-									{user.email}
-								</a>
-							</CustomTooltip>
-							
-							<CustomTooltip title={user.phone}>
-								<a className="card__phone" href={`tel:${user.phone}`}>
-									{user.phone}
-								</a>
-							</CustomTooltip>
-						</div>
-          </li>
-        ))}
+
+							<div>
+								<CustomTooltip title={user.position}>
+									<span className="card__position">
+										{user.position}
+									</span>
+								</CustomTooltip>
+								<CustomTooltip title={user.email}>
+									<a className="card__email" href={`mailto: ${user.email}`}>
+										{user.email}
+									</a>
+								</CustomTooltip>
+								
+								<CustomTooltip title={phone}>
+									<a className="card__phone" href={`tel:${user.phone}`}>
+										{phone}
+									</a>
+								</CustomTooltip>
+							</div>
+						</li>
+        )})}
 			</ul>
 
 			<button
