@@ -37,7 +37,7 @@ const MaterialUIOptionField: React.FC<MaterialUIOptionFieldProps>
     );
   }
 
-const theme = createTheme({
+export const theme = createTheme({
   typography: {
     fontFamily: [
       "Nunito",

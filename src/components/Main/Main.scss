@@ -6,6 +6,10 @@
 
 .main {
 	@extend %max-width-wrapper;
+}
+
+.info {	
+	@extend %max-width-wrapper;
 	
 	padding: $padding-content-mobile;
 
@@ -19,15 +23,8 @@
 
 	@include onDesktopHigh() {
 		padding: $padding-content-desktopHigh;
-	}	
+	}		
 
-	&__company {
-		@extend %main-text;
-		text-align: left;
-	}
-}
-
-.info {	
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -65,6 +62,7 @@
 		
 		max-width: 380px;
 		margin: 0 auto 32px;
+
 	}
 
 	&__title {

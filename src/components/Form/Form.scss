@@ -14,7 +14,7 @@
 	gap: 30px;
 
 	padding: $padding-content-mobile;
-	margin-bottom: $margin-between-section;
+	margin-bottom: calc($margin-between-section / 2);
 
   @extend %main-text;
 

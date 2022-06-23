@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import "./Form.scss";
 import { Form, FormikErrors, FormikTouched, FormikValues } from "formik";
 import { FormikField } from "../FormikField";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "../FormikOption/FormikOption";
 
 type Props = {
   errors: FormikErrors<FormikValues>,
@@ -10,7 +12,7 @@ type Props = {
 
 export const FormTextFields: FC<Props> = ({ errors, touched }) => {	
 	return (
-    <>
+    <ThemeProvider theme={theme}>
       <Form className="form__field">
         <FormikField
           label="Your name"
@@ -37,6 +39,6 @@ export const FormTextFields: FC<Props> = ({ errors, touched }) => {
           touched={touched}
         />
       </Form>
-    </>
+    </ThemeProvider>
 	);
 };
