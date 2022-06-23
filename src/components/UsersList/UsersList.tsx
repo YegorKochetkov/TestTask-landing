@@ -9,18 +9,16 @@ import {
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Loader } from "../Loader";
 import { CustomTooltip } from "../Form/CustomTooltip";
+import { User } from "../../types/user";
 
 export const UsersList: FC = () => {
 	const [isLastUsers, setIsLastUsers] = useState(true);
-	const [isLoading, setIsLoading] = useState(true);
 	
 	const dispatch = useAppDispatch();
 	const currentUsers: Users = useAppSelector(selectCurrentUsers);
-  const { data } = useGetUsersQuery(currentUsers);
+  const { data, isFetching  } = useGetUsersQuery(currentUsers);
 
-	const handleShowMore = () => {
-		setIsLoading(true);
-		
+	const handleShowMore = () => {		
 		if (data && data?.links.next_url !== null) {
 			dispatch(setCurrentUsers(data));
 		}
@@ -29,7 +27,6 @@ export const UsersList: FC = () => {
 	useEffect(() => {
 		if (data) {
 			setIsLastUsers(false);
-			setIsLoading(false);
 		}
 
 		if (data?.links.next_url === null) {
@@ -44,11 +41,11 @@ export const UsersList: FC = () => {
 			</h2>
 
 			<div className="cards__loader">
-				{isLoading && <Loader />}
+				{isFetching && <Loader />}
 			</div>
 
 			<ul className="cards__list" id="users">
-				{data?.users.map((user) => (
+				{data?.users.map((user: User) => (
           <li key={user.id} className="card">
 						<img
 							src={user.photo}
