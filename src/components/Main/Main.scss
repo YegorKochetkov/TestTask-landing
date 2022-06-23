@@ -4,8 +4,30 @@
 @import "../../styles/colors.scss";
 @import "../../styles/typography.scss";
 
-.info {	
+.main {
 	@extend %max-width-wrapper;
+	
+	padding: $padding-content-mobile;
+
+	@include onTablet() {
+		padding: $padding-content-tablet;
+	}
+
+	@include onDesktop() {
+		padding: $padding-content-desktop;
+	}
+
+	@include onDesktopHigh() {
+		padding: $padding-content-desktopHigh;
+	}	
+
+	&__company {
+		@extend %main-text;
+		text-align: left;
+	}
+}
+
+.info {	
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -42,20 +64,7 @@
 		color: $fontLight;
 		
 		max-width: 380px;
-		padding: $padding-content-mobile;
 		margin: 0 auto 32px;
-
-		@include onTablet() {
-			padding: $padding-content-tablet;
-		}
-	
-		@include onDesktop() {
-			padding: $padding-content-desktop;
-		}
-	
-		@include onDesktopHigh() {
-			padding: $padding-content-desktopHigh;
-		}	
 	}
 
 	&__title {

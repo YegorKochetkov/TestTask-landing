@@ -28,6 +28,7 @@ export const Main: FC = () => {
 			</section>
 			<UsersList />
 			<AddNewUserForm />
+      <p className="main__company">© abz.agency specially for the test task</p>
 		</main>
 	);
 };
