@@ -22,6 +22,18 @@ export const FormikField: React.FC<FormikFieldProps> = ({
   errors,
   touched,
 }) => {
+  const helperText = () => {
+    if (name === "phone") {
+      return "+38 (XXX) XXX - XX - XX";
+    }
+
+    if (errors[name] && touched[name]) {
+      return <ErrorMessage name={name} />;
+    }
+
+    return " ";
+  };
+
   return (
     <Field
       as={TextField}
@@ -29,9 +41,7 @@ export const FormikField: React.FC<FormikFieldProps> = ({
       label={label}
       fullWidth
       autoComplete="off"
-      helperText={name === "phone"
-        ? "+38 (XXX) XXX - XX - XX"
-        : <ErrorMessage name={name} />}
+      helperText={helperText()}
       error={errors[name] && touched[name]}
     />
   );
