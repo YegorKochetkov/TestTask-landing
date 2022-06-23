@@ -64,6 +64,7 @@ export const AddNewUserForm: FC = () => {
       await addUser(newUser).unwrap();
       actions.resetForm();
       setIsRegistered(true);
+      setUploadText("Upload your photo");
     }
 
     dispatch(resetUsersOrder());
