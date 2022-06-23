@@ -11,7 +11,7 @@ export const SignUpSchema = Yup.object().shape({
     .min(2, "Too short!")
     .max(60, "Too long!")
     .required("Name is required"),
-  mail: Yup
+  email : Yup
     .string()
     .matches(mailRegex, "Invalid email")
     .min(2, "Too short!")
@@ -21,8 +21,8 @@ export const SignUpSchema = Yup.object().shape({
     .string()
     .matches(phoneRegex, "Invalid phone")
     .required("Phone is required"),
-  position: Yup
-    .string()
+  position_id: Yup
+    .number()
     .required("Please, choose a position"),
   photo: Yup
     .mixed()
