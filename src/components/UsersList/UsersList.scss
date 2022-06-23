@@ -61,7 +61,9 @@
 }
 
 .card {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 
 	width: 328px;
 	height: 254px;
@@ -85,7 +87,6 @@
 
 		width: 70px;
 		height: 70px;
-		margin-bottom: 20px;
 
 		border-radius: 50%;
 	}
@@ -98,7 +99,6 @@
 		display: block;
 
 		margin: 0;
-		margin-bottom: 20px;
 		padding: 0;
 
 		color: $fontDark;

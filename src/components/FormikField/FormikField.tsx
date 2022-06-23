@@ -24,7 +24,7 @@ export const FormikField: React.FC<FormikFieldProps> = ({
 }) => {
   const helperText = () => {
     if (name === "phone") {
-      return "+38 (XXX) XXX - XX - XX";
+      return "+380 XXX XXX XXX";
     }
 
     if (errors[name] && touched[name]) {

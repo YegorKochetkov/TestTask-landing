@@ -15,8 +15,8 @@ export const UsersList: FC = () => {
 	const [isLastUsers, setIsLastUsers] = useState(true);
 	
 	const dispatch = useAppDispatch();
-	const currentUsers: Users = useAppSelector(selectCurrentUsers);
-  const { data, isFetching  } = useGetUsersQuery(currentUsers);
+	const nextUsers: Users = useAppSelector(selectCurrentUsers);
+  const { data, isFetching  } = useGetUsersQuery(nextUsers);
 
 	const handleShowMore = () => {		
 		if (data && data?.links.next_url !== null) {
@@ -60,23 +60,24 @@ export const UsersList: FC = () => {
 							</span>
 						</CustomTooltip>
 
-						<CustomTooltip title={user.position}>
-							<span className="card__position">
-								{user.position}
-							</span>
-						</CustomTooltip>
-
-						<CustomTooltip title={user.email}>
-							<a className="card__email" href={`mailto: ${user.email}`}>
-								{user.email}
-							</a>
-						</CustomTooltip>
-						
-						<CustomTooltip title={user.phone}>
-							<a className="card__phone" href={`tel:${user.phone}`}>
-								{user.phone}
-							</a>		
-						</CustomTooltip>
+						<div>
+							<CustomTooltip title={user.position}>
+								<span className="card__position">
+									{user.position}
+								</span>
+							</CustomTooltip>
+							<CustomTooltip title={user.email}>
+								<a className="card__email" href={`mailto: ${user.email}`}>
+									{user.email}
+								</a>
+							</CustomTooltip>
+							
+							<CustomTooltip title={user.phone}>
+								<a className="card__phone" href={`tel:${user.phone}`}>
+									{user.phone}
+								</a>
+							</CustomTooltip>
+						</div>
           </li>
         ))}
 			</ul>
