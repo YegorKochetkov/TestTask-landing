@@ -13,6 +13,7 @@
 
 	padding: $padding-content-mobile;
 	margin-bottom: $margin-between-section;
+	background-color: $background;
 
   @extend %main-text;
 
@@ -61,6 +62,8 @@
 }
 
 .card {
+	box-sizing: border-box;
+	
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -69,17 +72,20 @@
 	height: 254px;
 	padding: 20px;
 	
-		@include onTablet() {
-			width: 344px;
-		}
-	
-		@include onDesktop() {
-			width: 282px;
-		}
-	
-		@include onDesktopHigh() {
-			width: 370px;
-		}
+	background-color: #fff;
+	border-radius: 10px;
+
+	@include onTablet() {
+		width: 344px;
+	}
+
+	@include onDesktop() {
+		width: 282px;
+	}
+
+	@include onDesktopHigh() {
+		width: 370px;
+	}
 
 	&__avatar {
 		display: block;
@@ -87,7 +93,7 @@
 
 		width: 70px;
 		height: 70px;
-
+		border-color: #fff;
 		border-radius: 50%;
 	}
 

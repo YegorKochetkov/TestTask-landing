@@ -1,9 +1,12 @@
 @use "../../styles/blocks/buttons.scss";
 @import "../../styles/utils/extends.scss";
 @import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
  
 .footer {
   text-align: left;
+	background-color: $background;
 
 	@extend %max-width-wrapper;
 	

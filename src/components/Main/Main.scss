@@ -6,6 +6,7 @@
 
 .main {
 	@extend %max-width-wrapper;
+	background-color: $background;
 }
 
 .info {	
