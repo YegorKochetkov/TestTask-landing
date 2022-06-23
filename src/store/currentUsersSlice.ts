@@ -29,10 +29,13 @@ export const currentUsersSlice = createSlice({
     setCurrentUsers: (state, action: PayloadAction<Users>) => {
       return  { ...state, ...action.payload };
     },
+		resetUsersOrder: (state) => {
+      return  { ...state, ...initialState };
+    },
   }
 });
 
-export const { setCurrentUsers } = currentUsersSlice.actions;
+export const { setCurrentUsers, resetUsersOrder } = currentUsersSlice.actions;
 
 export const selectCurrentUsers = (state: RootState) => state.currentUsers;
 

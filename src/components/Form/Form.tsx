@@ -1,7 +1,6 @@
 import React, { FC, useMemo, useState } from "react";
 import "./Form.scss";
-import { Formik, Form, Field, ErrorMessage, FormikState, FormikHelpers } from "formik";
-import { FormikField } from "../FormikField";
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import { FormikOption } from "../FormikOption/FormikOption";
 import { SignUpSchema } from "./SingUpSchema";
 import { CustomTooltip } from "../Form/CustomTooltip";
@@ -10,6 +9,8 @@ import { UpdateUser, useAddUserMutation, useGetTokenQuery } from "../../store/us
 import { Registered } from "../Registered";
 import { Loader } from "../Loader";
 import { FormTextFields } from "./FormTextFields";
+import { useAppDispatch } from "../../store/hooks";
+import { resetUsersOrder } from "../../store/currentUsersSlice";
 
 export interface FormValues {
 	name: string,
@@ -35,6 +36,7 @@ export const AddNewUserForm: FC = () => {
   const [uploadText, setUploadText] = useState("Upload your photo");
   const { data } = useGetTokenQuery();
   const [addUser, { isError, isLoading }] = useAddUserMutation();
+	const dispatch = useAppDispatch();
 
   const [isRegistered, setIsRegistered] = useState(false);
 
@@ -63,6 +65,8 @@ export const AddNewUserForm: FC = () => {
       actions.resetForm();
       setIsRegistered(true);
     }
+
+    dispatch(resetUsersOrder());
 	};
 
   const handleUpload = (event: UploadEvent): void => {
