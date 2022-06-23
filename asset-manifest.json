@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/TestTask-landing/static/css/main.38d2b03f.css",
-    "main.js": "/TestTask-landing/static/js/main.82c705a8.js",
+    "main.css": "/TestTask-landing/static/css/main.6beaca1e.css",
+    "main.js": "/TestTask-landing/static/js/main.6e19d1b9.js",
     "static/js/787.d7482887.chunk.js": "/TestTask-landing/static/js/787.d7482887.chunk.js",
     "static/media/background_desktop_high.jpg": "/TestTask-landing/static/media/background_desktop_high.1523706678aea4ffeb29.jpg",
     "static/media/background_desktop.jpg": "/TestTask-landing/static/media/background_desktop.58d20eef0e83bbae5a5a.jpg",
     "static/media/background_tablet.jpg": "/TestTask-landing/static/media/background_tablet.0d0c15b740d71dee0e75.jpg",
     "static/media/background_mobile.jpg": "/TestTask-landing/static/media/background_mobile.900a0a74d633959ff462.jpg",
+    "static/media/success-image.svg": "/TestTask-landing/static/media/success-image.147ff01aeb0caaca03a3a94cfe9c0ce6.svg",
     "static/media/logo.svg": "/TestTask-landing/static/media/logo.56bda82bd882001476c0cd3c0dd1e432.svg",
     "index.html": "/TestTask-landing/index.html",
-    "main.38d2b03f.css.map": "/TestTask-landing/static/css/main.38d2b03f.css.map",
-    "main.82c705a8.js.map": "/TestTask-landing/static/js/main.82c705a8.js.map",
+    "main.6beaca1e.css.map": "/TestTask-landing/static/css/main.6beaca1e.css.map",
+    "main.6e19d1b9.js.map": "/TestTask-landing/static/js/main.6e19d1b9.js.map",
     "787.d7482887.chunk.js.map": "/TestTask-landing/static/js/787.d7482887.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38d2b03f.css",
-    "static/js/main.82c705a8.js"
+    "static/css/main.6beaca1e.css",
+    "static/js/main.6e19d1b9.js"
   ]
 }
