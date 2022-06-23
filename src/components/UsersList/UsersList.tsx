@@ -8,23 +8,7 @@ import {
 } from "../../store/currentUsersSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Loader } from "../Loader";
-import { styled } from "@mui/material/styles";
-import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
-
-const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-		fontSize: "16px",
-		lineHeight: "26px",
-    color: "#ffffffde",
-    backgroundColor: "#000000de",
-		padding: "3px 16px;",
-		marginLeft: "10%",
-		width: "fit-content",
-		textAlign: "center",
-  },
-}));
+import { CustomTooltip } from "../Form/CustomTooltip";
 
 export const UsersList: FC = () => {
 	const [isLastUsers, setIsLastUsers] = useState(true);
