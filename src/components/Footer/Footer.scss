@@ -1,0 +1,27 @@
+@use "../../styles/blocks/buttons.scss";
+@import "../../styles/utils/extends.scss";
+@import "../../styles/variables.scss";
+ 
+.footer {
+  text-align: left;
+
+	@extend %max-width-wrapper;
+	
+	padding: $padding-content-mobile;
+
+	@include onTablet() {
+		padding: $padding-content-tablet;
+	}
+
+	@include onDesktop() {
+		padding: $padding-content-desktop;
+	}
+
+	@include onDesktopHigh() {
+		padding: $padding-content-desktopHigh;
+	}
+
+  &__company {
+		@extend %main-text;
+	}
+}
