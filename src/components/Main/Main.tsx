@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Footer } from "../Footer";
 import { AddNewUserForm } from "../Form";
 import { UsersList } from "../UsersList";
 import "./Main.scss";
@@ -29,7 +28,6 @@ export const Main: FC = () => {
 			</section>
 			<UsersList />
 			<AddNewUserForm />
-      <Footer />
 		</main>
 	);
 };
