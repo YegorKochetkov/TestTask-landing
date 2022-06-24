@@ -1,5 +1,6 @@
 @use "../../styles/blocks/buttons.scss";
 @import "../../styles/utils/extends.scss";
+@import "../../styles/utils/mixins.scss";
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
 
@@ -52,6 +53,8 @@
 
 			border: 1px solid $formBorder;
 			border-radius: 4px;
+
+			@include hover(border-color,$fontDark);
 		}
 
 		&--error {

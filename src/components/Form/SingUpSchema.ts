@@ -29,8 +29,21 @@ export const SignUpSchema = Yup.object().shape({
     .test("fileFormat", "We support only jpeg/jpg", (file) => {
       return file && supportedFiles.includes(file.type);
     })
-    .test("photo", "The file is too large", (file) => {
+    .test("fileSize", "The file is too large", (file) => {
       return file && file.size <= maxFileSize;
+    })
+    .test("photoSize", "Photo must be at least 70x70", async (file) => {
+      let isLarge = true;
+      const image = new Image();
+
+      image.src = URL.createObjectURL(file);
+
+      await image.decode();
+
+      if (image.height < 70 || image.width < 70) {
+        isLarge = false;
+      }
+      return isLarge;
     })
     .required("Please, upload your photo"),
 });

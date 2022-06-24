@@ -122,9 +122,10 @@ export const AddNewUserForm: FC = () => {
                         handleUpload(event);
                       }}
                       hidden
+                      accept="image/jpeg"
                     />
 
-                    <CustomTooltip title={uploadText}>
+                    <CustomTooltip title={uploadText || "Upload your photo"}>
                       <div>
                         <p
                           className={classNames(
@@ -136,7 +137,7 @@ export const AddNewUserForm: FC = () => {
                           Upload
                         </p>
                         <p className="form__upload-text">
-                          {uploadText}
+                          {uploadText || "Upload your photo"}
                         </p>
                       </div>
                     </CustomTooltip>
