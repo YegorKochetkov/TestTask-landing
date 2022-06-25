@@ -1,8 +1,9 @@
 @import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
 
 .loader {
-	width: 48px;
-	height: 48px;
+	width: $loader-size-x;
+	height: $loader-size-x;
 
 	background-image: url(../../images/preloader.png);
 	background-size: contain;
