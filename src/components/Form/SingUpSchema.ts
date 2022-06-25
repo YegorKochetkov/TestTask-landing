@@ -32,18 +32,18 @@ export const SignUpSchema = Yup.object().shape({
     .test("fileSize", "The file is too large", (file) => {
       return file && file.size <= maxFileSize;
     })
-    .test("photoSize", "Photo must be at least 70x70", async (file) => {
-      let isLarge = true;
-      const image = new Image();
+    // .test("photoSize", "Photo must be at least 70x70", async (file) => {
+    //   let isLarge = true;
+    //   const image = new Image();
 
-      image.src = URL.createObjectURL(file);
+    //   image.src = URL.createObjectURL(file);
 
-      await image.decode();
+    //   await image.decode();
 
-      if (image.height < 70 || image.width < 70) {
-        isLarge = false;
-      }
-      return isLarge;
-    })
+    //   if (image.height < 70 || image.width < 70) {
+    //     isLarge = false;
+    //   }
+    //   return isLarge;
+    // })
     .required("Please, upload your photo"),
 });
